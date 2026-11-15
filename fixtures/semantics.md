@@ -1,0 +1,3 @@
+schema固定每列type为text/integer/boolean，值可null；bool不得充integer。text collation只支持binary或ascii_ci，后者仅将ASCII A..Z折为a..z，其他字符原样。NULL在集合运算行等价中与NULL相等，不采用谓词UNKNOWN。规范键按schema类型保存，不把所有值转字符串；输出按规范键的JSON紧凑UTF8字节序排列，键内按出现身份排序。
+叶出现身份是AST叶路径与source行id的二元组；同一source被两处使用时是两份出现，不能去重。各节点以本节点输入出现的原始身份排序（路径先、id后，均UTF8）形成每键的left/right队列。union_all保留两队列全部，union_distinct每键只保留两侧中身份最小的一项，intersect_all每键保留left前min(L,R)项，except_all取消left最前min(L,R)项并保留剩余项。保留的值使用该项原文，不凭collation折写原值。每节点输出quota.jsonl记规范键、L/R、输出数及保留/取消来源身份，交集匹配left[i]与right[i]，差集取消也同此配对，不需要最优匹配。节点输出继续作为父节点输入，来源身份不改变。
+所有source id在各source内唯一、schema一致，未知source/非法类型/坏AST整次拒绝；树最大深度4、每叶100行。这里只定义这四种运算；不支持隐式类型提升、locale collation、SQL解析或流式大规模。

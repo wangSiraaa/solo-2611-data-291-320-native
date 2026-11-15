@@ -1,0 +1,14 @@
+{
+  "columns": [
+    {
+      "name": "label",
+      "type": "text",
+      "collation": "ascii_ci"
+    },
+    {
+      "name": "qty",
+      "type": "integer",
+      "collation": "binary"
+    }
+  ]
+}

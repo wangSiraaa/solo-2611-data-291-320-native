@@ -1,0 +1,48 @@
+[
+  {
+    "id": "intersect",
+    "op": "intersect_all",
+    "left": {
+      "source": "A"
+    },
+    "right": {
+      "source": "B"
+    }
+  },
+  {
+    "id": "except",
+    "op": "except_all",
+    "left": {
+      "source": "A"
+    },
+    "right": {
+      "source": "B"
+    }
+  },
+  {
+    "id": "union_distinct",
+    "op": "union_distinct",
+    "left": {
+      "source": "A"
+    },
+    "right": {
+      "source": "B"
+    }
+  },
+  {
+    "id": "reuse",
+    "op": "union_all",
+    "left": {
+      "source": "A"
+    },
+    "right": {
+      "op": "except_all",
+      "left": {
+        "source": "A"
+      },
+      "right": {
+        "source": "B"
+      }
+    }
+  }
+]
