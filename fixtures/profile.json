@@ -1,0 +1,9 @@
+{
+  "revision": 2013,
+  "timestamp_policy": "raw timestamp is integer microseconds times timemult; 0 is valid",
+  "clock_formula": "sample 1 t=0; each transition n-1 to n uses the rate of destination sample n; sample numbers remain absolute when rows missing",
+  "timestamp_tolerance_us": 0,
+  "record_bytes": 16,
+  "normal_digital_state": "metadata only; do not invert decoded bits",
+  "scope": "fixed two analog and seventeen digital; two positive integer rates; no resampling"
+}
