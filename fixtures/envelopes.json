@@ -1,0 +1,65 @@
+[
+  {
+    "event_id": "e1",
+    "receiver": "rxA",
+    "offset": 0,
+    "length": 68,
+    "sequence": 1
+  },
+  {
+    "event_id": "e2",
+    "receiver": "rxB",
+    "offset": 68,
+    "length": 31,
+    "sequence": 2
+  },
+  {
+    "event_id": "e3",
+    "receiver": "rxA",
+    "offset": 99,
+    "length": 31,
+    "sequence": 3
+  },
+  {
+    "event_id": "e4",
+    "receiver": "rxA",
+    "offset": 130,
+    "length": 31,
+    "sequence": 4
+  },
+  {
+    "event_id": "e5",
+    "receiver": "rxA",
+    "offset": 161,
+    "length": 68,
+    "sequence": 5
+  },
+  {
+    "event_id": "e6",
+    "receiver": "rxA",
+    "offset": 229,
+    "length": 68,
+    "sequence": 6
+  },
+  {
+    "event_id": "e7",
+    "receiver": "rxA",
+    "offset": 297,
+    "length": 31,
+    "sequence": 7
+  },
+  {
+    "event_id": "e8",
+    "receiver": "rxA",
+    "offset": 328,
+    "length": 31,
+    "sequence": 8
+  },
+  {
+    "event_id": "bad",
+    "receiver": "rxA",
+    "offset": 359,
+    "length": 31,
+    "sequence": 9
+  }
+]

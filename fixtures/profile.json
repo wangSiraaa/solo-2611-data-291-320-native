@@ -1,0 +1,12 @@
+{
+  "sentence": "GSV",
+  "talkers": [
+    "GP",
+    "GL"
+  ],
+  "signal_id_suffix": false,
+  "maximum_messages": 9,
+  "maximum_satellites": 36,
+  "new_part_1": "supersedes incomplete cycle; completed cycle never reopened",
+  "empty_snr": "unknown; integer zero observed"
+}
