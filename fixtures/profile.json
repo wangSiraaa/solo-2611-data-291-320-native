@@ -1,0 +1,14 @@
+{
+  "base_url": "https://example.invalid/fhir/",
+  "types": [
+    "Patient",
+    "Observation"
+  ],
+  "reference_paths": [
+    "subject.reference",
+    "derivedFrom[*].reference",
+    "focus[*].reference"
+  ],
+  "versionless_policy": "resolve iff one distinct version; do not choose latest",
+  "contained_scope": "owner entry only"
+}

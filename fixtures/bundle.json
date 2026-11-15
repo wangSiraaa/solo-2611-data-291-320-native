@@ -1,0 +1,116 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://example.invalid/fhir/Patient/p1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "p1",
+        "meta": {
+          "versionId": "1"
+        },
+        "name": [
+          {
+            "text": "old"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Patient/p1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "p1",
+        "meta": {
+          "versionId": "2"
+        },
+        "name": [
+          {
+            "text": "new"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o1",
+        "meta": {
+          "versionId": "a"
+        },
+        "subject": {
+          "reference": "Patient/p1/_history/1"
+        },
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:obs-2"
+          }
+        ],
+        "valueString": "A"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o2",
+        "meta": {
+          "versionId": "a"
+        },
+        "subject": {
+          "reference": "Patient/p1"
+        },
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:obs-1"
+          }
+        ],
+        "valueString": "B"
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Observation/o3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o3",
+        "meta": {
+          "versionId": "1"
+        },
+        "subject": {
+          "reference": "https://other.invalid/fhir/Patient/p1"
+        },
+        "contained": [
+          {
+            "resourceType": "Patient",
+            "id": "local",
+            "name": [
+              {
+                "text": "contained"
+              }
+            ]
+          }
+        ],
+        "focus": [
+          {
+            "reference": "#local"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Observation/o4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o4",
+        "meta": {
+          "versionId": "1"
+        },
+        "subject": {
+          "reference": "#local"
+        }
+      }
+    }
+  ]
+}

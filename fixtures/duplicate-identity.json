@@ -1,0 +1,9 @@
+{
+  "append_entry_index": 0,
+  "change_field": "resource.name",
+  "new_value": [
+    {
+      "text": "conflicting"
+    }
+  ]
+}
