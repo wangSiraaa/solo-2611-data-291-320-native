@@ -1,0 +1,39 @@
+[
+  {
+    "id": "alias_range",
+    "path": [
+      "top",
+      "unit",
+      "mirror"
+    ],
+    "start_tick": 4,
+    "end_tick": 16
+  },
+  {
+    "id": "real_x_vs_unobserved",
+    "path": [
+      "top",
+      "flag"
+    ],
+    "start_tick": 0,
+    "end_tick": 13
+  },
+  {
+    "id": "at_boundary",
+    "path": [
+      "top",
+      "data"
+    ],
+    "start_tick": 12,
+    "end_tick": 15
+  },
+  {
+    "id": "empty",
+    "path": [
+      "top",
+      "clk"
+    ],
+    "start_tick": 8,
+    "end_tick": 8
+  }
+]
