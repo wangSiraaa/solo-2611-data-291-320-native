@@ -1,0 +1,11 @@
+{
+  "hdu": "OBS",
+  "columns": {
+    "RECORD": "1J",
+    "SAMPLES": "1PJ",
+    "FLAGS": "9X"
+  },
+  "maximum_rows": 100,
+  "maximum_vector_length": 100,
+  "schema": "PrimaryHDU plus one BINTABLE; no scaling, compression, external data or null sentinel"
+}
