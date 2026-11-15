@@ -1,0 +1,9 @@
+{
+  "direction": "client_to_server",
+  "mask_required": true,
+  "permessage_deflate": true,
+  "client_no_context_takeover": false,
+  "max_message_bytes": 65536,
+  "binary_messages": "reject",
+  "expected_texts": 3
+}
