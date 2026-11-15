@@ -1,0 +1,17 @@
+{
+  "tables": {
+    "orders": [
+      "id",
+      "customer_id",
+      "amount"
+    ],
+    "customers": [
+      "customer_id",
+      "name"
+    ],
+    "limits": [
+      "customer_id",
+      "cap"
+    ]
+  }
+}

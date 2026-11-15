@@ -1,0 +1,87 @@
+[
+  {
+    "id": "ambiguous",
+    "query": {
+      "from": {
+        "join": "inner",
+        "left": {
+          "table": "orders",
+          "alias": "o"
+        },
+        "right": {
+          "table": "limits",
+          "alias": "l"
+        },
+        "on": {
+          "eq": [
+            {
+              "col": "customer_id",
+              "qualifier": "o"
+            },
+            {
+              "col": "customer_id",
+              "qualifier": "l"
+            }
+          ]
+        }
+      },
+      "select": [
+        {
+          "col": "customer_id"
+        }
+      ]
+    }
+  },
+  {
+    "id": "alias_hides_base",
+    "query": {
+      "from": {
+        "table": "orders",
+        "alias": "o"
+      },
+      "select": [
+        {
+          "col": "id",
+          "qualifier": "orders"
+        }
+      ]
+    }
+  },
+  {
+    "id": "inner_alias_shadows_outer",
+    "query": {
+      "from": {
+        "table": "orders",
+        "alias": "o"
+      },
+      "select": [
+        {
+          "exists": {
+            "from": {
+              "table": "limits",
+              "alias": "o"
+            },
+            "select": [
+              {
+                "literal": 1,
+                "as": "one"
+              }
+            ],
+            "where": {
+              "eq": [
+                {
+                  "col": "amount",
+                  "qualifier": "o"
+                },
+                {
+                  "literal": 1
+                }
+              ]
+            }
+          },
+          "as": "x"
+        }
+      ]
+    }
+  }
+]

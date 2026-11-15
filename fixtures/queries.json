@@ -1,0 +1,110 @@
+[
+  {
+    "id": "merged_star",
+    "from": {
+      "join": "left",
+      "left": {
+        "table": "orders",
+        "alias": "o"
+      },
+      "right": {
+        "table": "customers",
+        "alias": "c"
+      },
+      "using": [
+        "customer_id"
+      ]
+    },
+    "select": [
+      {
+        "star": true
+      }
+    ]
+  },
+  {
+    "id": "qualified_and_merged",
+    "from": {
+      "join": "left",
+      "left": {
+        "table": "orders",
+        "alias": "o"
+      },
+      "right": {
+        "table": "customers",
+        "alias": "c"
+      },
+      "using": [
+        "customer_id"
+      ]
+    },
+    "select": [
+      {
+        "col": "customer_id",
+        "as": "merged"
+      },
+      {
+        "col": "customer_id",
+        "qualifier": "c",
+        "as": "right_id"
+      },
+      {
+        "star": "o"
+      }
+    ]
+  },
+  {
+    "id": "correlated",
+    "from": {
+      "table": "orders",
+      "alias": "o"
+    },
+    "select": [
+      {
+        "col": "id",
+        "as": "order_id"
+      },
+      {
+        "exists": {
+          "from": {
+            "table": "limits",
+            "alias": "l"
+          },
+          "select": [
+            {
+              "literal": 1,
+              "as": "one"
+            }
+          ],
+          "where": {
+            "and": [
+              {
+                "eq": [
+                  {
+                    "col": "customer_id",
+                    "qualifier": "l"
+                  },
+                  {
+                    "col": "customer_id",
+                    "qualifier": "o"
+                  }
+                ]
+              },
+              {
+                "gt": [
+                  {
+                    "col": "amount"
+                  },
+                  {
+                    "col": "cap",
+                    "qualifier": "l"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "as": "over_limit"
+      }
+    ]
+  }
+]
