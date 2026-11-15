@@ -1,0 +1,27 @@
+{
+  "schema": [
+    "integer",
+    "text",
+    "record"
+  ],
+  "type_codes": [
+    5,
+    9,
+    12
+  ],
+  "slice": {
+    "offset": 2,
+    "length": 6
+  },
+  "take": [
+    0,
+    2,
+    2,
+    4,
+    5
+  ],
+  "output_modes": [
+    "dense",
+    "sparse"
+  ]
+}

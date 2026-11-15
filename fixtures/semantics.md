@@ -1,0 +1,3 @@
+输入Arrow IPC file含一列u，其UnionType字段依次为integer:int64、text:string、record:struct<flag:bool,count:int32>，type_codes为5/9/12，源dense/sparse两文件逻辑值相同，但布局不同。Union本身没有独立NULL位；active child为NULL仍保留对应tag，不能把integer NULL与text NULL合成一个无类型NULL。record结构体NULL与非NULL但内部字段NULL也不同。
+先按plan.slice从逻辑父数组切片，再按take索引选择（可重复，可空；负数或越界拒绝）。逻辑来源是原文件父行号offset+index。源dense必须按该父行type_code选择child，再按value_offset取值；不能把父行号当child下标。源sparse按父行位置选择child；非活跃child即使非NULL也必须忽略。Arrow切片可能有非零array.offset，不能把buffers的第0位当逻辑第0行。
+输出dense每个类型child只含本次按输出顺序实际选择的对应值，offset在各自child中从0连续递增，重复选择也复制一个出现；不得带未引用旧child项。输出sparse每child长度等于输出父长度，活跃位保存值、其他位严格NULL。输出type_codes仍为5/9/12，不按字段索引0/1/2改tag。两种输出带source-row映射；validate重新读文件逐行比较(tag, typed-value)，不能只用to_pylist忽略tag。
