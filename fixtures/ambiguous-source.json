@@ -1,0 +1,14 @@
+[
+  {
+    "sid": "x1",
+    "key": "A",
+    "value": 12,
+    "op": "upsert"
+  },
+  {
+    "sid": "x2",
+    "key": "A",
+    "value": 13,
+    "op": "upsert"
+  }
+]

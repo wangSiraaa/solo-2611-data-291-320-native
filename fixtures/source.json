@@ -1,0 +1,38 @@
+[
+  {
+    "sid": "s1",
+    "key": "A",
+    "value": 11,
+    "op": "upsert"
+  },
+  {
+    "sid": "s2",
+    "key": "C",
+    "value": 40,
+    "op": "upsert"
+  },
+  {
+    "sid": "s3",
+    "key": "C",
+    "value": 50,
+    "op": "ignore"
+  },
+  {
+    "sid": "s4",
+    "key": "D",
+    "value": 0,
+    "op": "delete"
+  },
+  {
+    "sid": "s5",
+    "key": "A",
+    "value": 99,
+    "op": "ignore"
+  },
+  {
+    "sid": "s6",
+    "key": null,
+    "value": 7,
+    "op": "upsert"
+  }
+]

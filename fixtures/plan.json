@@ -1,0 +1,48 @@
+{
+  "match": "target.key = source.key",
+  "matched": [
+    {
+      "when": {
+        "source.op": "delete"
+      },
+      "action": "delete"
+    },
+    {
+      "when": {
+        "source.op": "upsert"
+      },
+      "action": "update_value"
+    },
+    {
+      "when": {},
+      "action": "nothing"
+    }
+  ],
+  "not_matched_source": [
+    {
+      "when": {
+        "source.op": "upsert"
+      },
+      "action": "insert"
+    },
+    {
+      "when": {},
+      "action": "nothing"
+    }
+  ],
+  "not_matched_target": [
+    {
+      "when": {
+        "target.active": true
+      },
+      "action": "delete"
+    },
+    {
+      "when": {},
+      "action": "nothing"
+    }
+  ],
+  "insert_identity": "i:source.sid",
+  "key_nulls": "NULL never matches NULL",
+  "cardinality": "more than one modifying matched source per target fails whole plan; do-nothing matches do not count"
+}

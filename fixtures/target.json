@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t1",
+    "key": "A",
+    "value": 10,
+    "active": true
+  },
+  {
+    "id": "t2",
+    "key": "B",
+    "value": 20,
+    "active": true
+  },
+  {
+    "id": "t3",
+    "key": "D",
+    "value": 30,
+    "active": false
+  },
+  {
+    "id": "t4",
+    "key": null,
+    "value": 5,
+    "active": false
+  }
+]
