@@ -1,0 +1,3 @@
+只读取固定列PDB ATOM/HETATM；MODEL/ENDMDL可用，不出现MODEL时视为model=1。模型ID唯一，模型内serial唯一；coordinates数值必须有限，occupancy是[0,1]两位十进制。residue身份为(model,chainID,resSeq,iCode,resName)，atom site为该身份加atom-name精确字段去两端空格。保留record种类、原serial、element及输入行号；空chain和空iCode是合法原值，不与字符串0等同。
+每residue的空altLoc原子是shared，所有非空altLoc标记各形成一候选构象，候选score为该标记原子occupancy精确和；优先score最大，再按altLoc ASCII升序。没有非空altLoc则selected_alt=null。输出shared+选中altLoc，缺失的atom-name不从其他候选补。候选内部同atom-name重复或shared与任一候选同atom-name冲突使该residue隔离，其他residue继续。原serial重复/非法MODEL结构使整个文件拒绝；坏坐标/occupancy则相应residue隔离。此选择策略是交付约定，不宣称恢复唯一真实分子构象。
+保留全部候选/未选原子来源表及选中依据。输出坐标Angstrom，数值按原精度读取，不计算键、几何重建、能量或结构推断。其他PDB记录只登记ignored，不解释CONECT/ANISOU/晶胞；不把它们当坐标行。
