@@ -1,0 +1,11 @@
+{
+  "question_id": "317",
+  "scope_limits": [
+    "JPEG Baseline封装、至多10帧",
+    "非空BOT；空BOT仅允许单帧，不支持EOT",
+    "可用pydicom；不解码医学像素、不做几何重建"
+  ],
+  "input_policy": "Given synthetic fixtures and any variants within the prompt-defined subset; invalid variants test only the declared rejection behavior.",
+  "quantifier": "all inputs within the declared subset",
+  "non_goals": "Anything outside the explicit subset is not an acceptance requirement."
+}
