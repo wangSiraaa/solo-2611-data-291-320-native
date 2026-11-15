@@ -1,0 +1,22 @@
+{
+  "major_types": [
+    "unsigned",
+    "negative integer",
+    "bytes",
+    "text",
+    "array",
+    "map"
+  ],
+  "simple": [
+    "false",
+    "true",
+    "null"
+  ],
+  "tags": [
+    28,
+    29
+  ],
+  "definite_lengths_only": true,
+  "shared_values": "containers only; reference table resets per top-level item",
+  "map_keys": "integer, bool, bytes, text; typed uniqueness required"
+}
