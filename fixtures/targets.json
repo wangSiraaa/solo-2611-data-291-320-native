@@ -1,0 +1,16 @@
+{
+  "columns": [
+    {
+      "name": "amount",
+      "precision": 5,
+      "scale": 2,
+      "mode": "half_even"
+    },
+    {
+      "name": "rate",
+      "precision": 4,
+      "scale": 3,
+      "mode": "exact"
+    }
+  ]
+}
