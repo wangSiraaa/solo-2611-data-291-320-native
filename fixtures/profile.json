@@ -1,0 +1,15 @@
+{
+  "schemas": [
+    "public"
+  ],
+  "types": [
+    "integer",
+    "text"
+  ],
+  "statements": [
+    "CREATE TABLE simple columns",
+    "COMMENT ON TABLE string",
+    "COPY listed-columns FROM stdin"
+  ],
+  "copy_format": "PostgreSQL text; tab delimiter; exact \\N raw token is null; escapes b f n r t v backslash and 1-3 octal digits"
+}
