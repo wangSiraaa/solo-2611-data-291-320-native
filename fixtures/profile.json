@@ -1,0 +1,18 @@
+{
+  "axes": [
+    "SeriesAxis",
+    "BrainModelAxis"
+  ],
+  "surface_structures": [
+    "CIFTI_STRUCTURE_CORTEX_LEFT"
+  ],
+  "voxel_structures": [
+    "CIFTI_STRUCTURE_THALAMUS_LEFT"
+  ],
+  "unmapped_positions": "present=false, no numeric value; zero at mapped positions is observed",
+  "fill_policy": "no interpolation",
+  "maximum_dense_shape": [
+    4,
+    20
+  ]
+}
