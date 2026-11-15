@@ -1,0 +1,11 @@
+{
+  "question_id": "311",
+  "scope_limits": [
+    "单个Polyline或NULL shape文件组，至多1000记录",
+    "DBF只支持C和无小数N，UTF-8 .cpg",
+    "不重投影、不修复坏文件、不实现完整DBF"
+  ],
+  "input_policy": "Given synthetic fixtures and any variants within the prompt-defined subset; invalid variants test only the declared rejection behavior.",
+  "quantifier": "all inputs within the declared subset",
+  "non_goals": "Anything outside the explicit subset is not an acceptance requirement."
+}
